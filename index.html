@@ -8,26 +8,32 @@
   </head>
   <body>
     <div class="progress-container">
-      <div class="progress-circle" id="progress-circle"></div>
+      <div id="progress">
+        <div class="progress-circle" id="progress-circle"></div>
+      </div>
     </div>
     <div class="progress-setings">
       <div>
-        <div class="progress-value settings-box" id="value">100</div>
+        <input type="" class="progress-value settings-box" id="value" placeholer="100" />
+        <label for="animation-switch" id="value-label"></label>
         <p>Value</p>
       </div>
       <div>
-        <input type="checkbox" id="animation-switch" />
-        <label for="animation-switch" class="toggle-switch"> 
-        </label>
+        <input
+          type="checkbox"
+          id="animation-switch"
+        />
+        <label for="animation-switch" class="toggle-switch"></label>
         <p>Animate</p>
       </div>
       <div>
-        <input type="checkbox" id="hide-switch" />
-        <label for="hide-switch" class="toggle-switch">
-        </label>
+        <input type="checkbox" id="hide-switch" onclick="hideCircleBar()" />
+        <label for="hide-switch" class="toggle-switch"> </label>
         <p>Hide</p>
       </div>
     </div>
+    <!--
     <script src="./script.js"></script>
+    -->
   </body>
 </html>
