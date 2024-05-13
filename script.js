@@ -1,44 +1,38 @@
 const animateStateCheck = document.getElementById("animation-switch"),
     hideStateCheck = document.getElementById("hide-switch");
 
-// FIXME: creates infinate amout of error instead of rotating circle bar
-function animateCircleBar() {
-    let rotateValue = 0;
-
-    setInterval(()=>{
-        rotateValue++;
-        circularProgress.style.transform = `rotate(${rotateValue}deg)`;
-        console.log(rotateValue);
-
-        if(!animateStateCheck.checked) {
-            clearInterval(rotating);
-        }
-    }, 10);
-}
-
-function hideCircleBar() {
-    if (hideStateCheck.checked) {
-        circularProgress.style.display = "none";
-    }
-    else {
-        circularProgress.style.display = "block";
-    }
-}
-
 let circularProgress = document.getElementById("progress-circle"),
     progressValue = document.getElementById("value");
 
 let progressStartValue = 0,
-    progressEndValue = document.getElementById("value").value,
+    progressEndValue,
     speed = 75;
 
-// progressValue.textContent = progressEndValue;
+window.onload = () => {
+    progressEndValue = 90;
+    let progress = setInterval(() => {
+        progressStartValue++;
+    
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+        circularProgress.style.background = `conic-gradient(teal ${progressStartValue * 3.6}deg, transparent 0deg)`;
+    }, speed);
+}
 
-let progress = setInterval(() => {
-    progressStartValue++;
-
-    if (progressStartValue == progressEndValue) {
-        clearInterval(progress);
+animateStateCheck.addEventListener('change', function() {
+    if (this.checked) {
+        // Animation is turned off
+        console.log("Animation is turned off.");
+        // Remove animation related properties
+        circularProgress.style.transition = "none";
+        circularProgress.setAttribute("class", "circular-progress");
+    } else {
+        // Animation is turned on
+        console.log("Animation is turned on.");
+        // Add animation related properties
+        circularProgress.style.transition = `all ${speed}ms linear`;
+        circularProgress.removeAttribute("class", "circular-progress");
     }
-    circularProgress.style.background = `conic-gradient(teal ${progressStartValue * 3.6}deg, transparent 0deg)`;
-}, speed);
+});
+

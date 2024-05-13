@@ -24,20 +24,19 @@ body > div {
   width: fit-content;
 }
 
-.progress-circle {
+#progress-circle {
   position: relative;
   width: 300px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background: conic-gradient(teal 0deg, transparent 0deg);
 
-
   &::before {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background:  rgb(219, 219, 219);
+    background:  rgba(219, 219, 219, 0.2);
     content: " ";
     height: 100%;
     width: 100%;
@@ -56,6 +55,10 @@ body > div {
     width: 85%;
     border-radius: 50%;
   }
+}
+
+.circular-progress {
+  animation: rotate 10s infinite ease-in;
 }
 
 .progress-setings {
@@ -83,12 +86,13 @@ body > div {
   border: 3px solid black;
   border-radius: 30px;
   margin-right: 20px;
+  padding: 10px 27px;
   width: 30px;
   text-align: center;
 }
 
 #value::placeholder {
-    font-size: 16px;
+    font-size: 18px;
     color: black;
 }
 
@@ -161,4 +165,16 @@ input[type="checkbox"]:checked + .toggle-switch::before {
       input[type="checkbox"]:checked + .toggle-switch::before {
         transform: translateX(44px);
       }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
