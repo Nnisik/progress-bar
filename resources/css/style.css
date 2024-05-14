@@ -35,7 +35,7 @@ input::-webkit-inner-spin-button {
   width: 300px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: conic-gradient(teal 0deg, transparent 0deg);
+  background: conic-gradient(#0A67A3 0deg, transparent 0deg);
   animation: rotate 10s infinite ease-in-out;
 
   &::before {
@@ -133,7 +133,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .toggle-switch {
-  background-color: teal;
+  background-color: #0A67A3;
 }
 
 input[type="checkbox"]:checked + .toggle-switch::before {
