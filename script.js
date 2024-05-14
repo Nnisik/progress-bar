@@ -34,7 +34,6 @@ valueInput.addEventListener('keyup', () => {
     fillBar(valueInput.value);
 })
 
-// FIXME: doesn't start animation
 animateStateCheck.addEventListener('change', () => {
     if (animateStateCheck.checked) {
         circularProgress.style.animationPlayState = 'running';
@@ -44,7 +43,6 @@ animateStateCheck.addEventListener('change', () => {
     }
 });
 
-// FIXME: doesn't hide circle
 hideStateCheck.addEventListener('change', () => {
     if (hideStateCheck.checked) {
         circularProgress.style.display = "none";
