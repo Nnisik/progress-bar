@@ -7,7 +7,7 @@ let circularProgress = document.getElementById("progress-circle"),
 
 let progressStartValue = 0,
     progressEndValue,
-    speed = 75;
+    speed = 50;
 
 function fillBar(progressEndValue) {
     //   console.log("filling bar");
@@ -25,34 +25,30 @@ function fillBar(progressEndValue) {
 }
 
 window.onload = () => {
-    progressEndValue = 90;
-    let progress = setInterval(() => {
-        progressStartValue++;
+    fillBar(30);
     
-        if (progressStartValue == progressEndValue) {
-            clearInterval(progress);
-        }
-        circularProgress.style.background = `conic-gradient(teal ${progressStartValue * 3.6}deg, transparent 0deg)`;
-    }, speed);
+    circularProgress.style.animationPlayState = circularProgress.checked ? 'paused' : 'running';
 }
 
 valueInput.addEventListener('keyup', () => {
     fillBar(valueInput.value);
 })
 
+// FIXME: doesn't start animation
 animateStateCheck.addEventListener('change', () => {
-    if (this.checked) {
-        // Animation is turned off
-        console.log("Animation is turned off.");
-        // Remove animation related properties
-        circularProgress.style.transition = "none";
-        circularProgress.setAttribute("class", "circular-progress");
-    } else {
-        // Animation is turned on
-        console.log("Animation is turned on.");
-        // Add animation related properties
-        circularProgress.style.transition = `all ${speed}ms linear`;
-        circularProgress.removeAttribute("class", "circular-progress");
+    if (animateStateCheck.checked) {
+        circularProgress.style.animationPlayState = 'running';
+    }
+    else {
+        circularProgress.style.animationPlayState = 'paused';
     }
 });
 
+// FIXME: doesn't hide circle
+hideStateCheck.addEventListener('change', () => {
+    if (hideStateCheck.checked) {
+        circularProgress.style.display = "none";
+    } else {
+        circularProgress.style.display = "block";
+    }
+});

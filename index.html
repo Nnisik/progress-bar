@@ -14,17 +14,23 @@
     </div>
     <div class="progress-setings">
       <div>
-        <input type="number" class="progress-value settings-box" id="value" placeholder="90" />
+        <input 
+          type="number" 
+          class="progress-value settings-box" 
+          id="value" 
+          placeholder="90"
+          min="0"
+          max="100" />
         <label for="animation-switch" id="value-label"></label>
         <p>Value</p>
       </div>
       <div>
-        <input type="checkbox" id="animation-switch" />
+        <input type="checkbox" id="animation-switch" checked />
         <label for="animation-switch" class="toggle-switch"></label>
         <p>Animate</p>
       </div>
       <div>
-        <input type="checkbox" id="hide-switch" onclick="hideCircleBar()" />
+        <input type="checkbox" id="hide-switch"" />
         <label for="hide-switch" class="toggle-switch"> </label>
         <p>Hide</p>
       </div>
