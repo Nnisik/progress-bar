@@ -9,5 +9,4 @@
 * changing input value with arrows broke the layout
 
 ### Todo
-* shorten controllers
 * include webpack

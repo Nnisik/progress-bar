@@ -1,9 +1,7 @@
-const hideStateCheck = document.getElementById("hide-switch");
-
-hideStateCheck.addEventListener('change', () => {
-    if (hideStateCheck.checked) {
-        circularProgress.style.display = "none";
-    } else {
-        circularProgress.style.display = "block";
-    }
-});
+export default function hideProgressBar() {
+  if (document.getElementById("hide-switch").checked) {
+    document.getElementById("progress-circle").style.display = "none";
+  } else {
+    document.getElementById("progress-circle").style.display = "block";
+  }
+}
