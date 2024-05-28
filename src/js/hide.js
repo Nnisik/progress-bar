@@ -1,7 +1,7 @@
 export default function hideProgressBar() {
   if (document.getElementById("hide-switch").checked) {
-    document.getElementById("progress-circle").style.display = "none";
+    document.getElementById("progress-circle").style.visibility = "hidden";
   } else {
-    document.getElementById("progress-circle").style.display = "block";
+    document.getElementById("progress-circle").style.visibility = "visible";
   }
 }
