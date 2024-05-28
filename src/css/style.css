@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid pink;
 }
 
 body {
@@ -32,7 +33,7 @@ input::-webkit-inner-spin-button {
 
 #progress-circle {
   position: relative;
-  width: 300px;
+  width: 250px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background: conic-gradient(#0A67A3 0deg, transparent 0deg);
@@ -88,12 +89,12 @@ input::-webkit-inner-spin-button {
 }
 
 #value {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   border: 3px solid black;
   border-radius: 30px;
   margin-right: 20px;
-  padding: 10px 27px;
+  padding: 8px 15px;
   width: 30px;
   text-align: center;
 }
@@ -108,8 +109,8 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-switch {
-  background: rgb(197, 221, 221);
-  width: 90px;
+  background: #0A67A3;
+  width: 60px;
   height: 42px;
   border-radius: 20px;
   cursor: pointer;
@@ -137,7 +138,7 @@ input[type="checkbox"]:checked + .toggle-switch {
 }
 
 input[type="checkbox"]:checked + .toggle-switch::before {
-  transform: translateX(48px);
+  transform: translateX(18px);
 }
 
 @media (max-width: 431px) {
@@ -148,30 +149,12 @@ input[type="checkbox"]:checked + .toggle-switch::before {
 
 @media (max-width: 959px) {
     .progress-circle {
-        width: 180px;
-      }
-    #value {
-      font-size: 20px;
-      padding: 0 20px;
+      width: 180px;
     }
 
-    .toggle-switch {
-        width: 75px;
-        height: 32px;
-    
-        &::before {
-          height: 28px;
-          width: 28px;
-        }
-      }
-    
-      .progress-setings p {
-        font-size: 18px;
-      }
-    
-      input[type="checkbox"]:checked + .toggle-switch::before {
-        transform: translateX(44px);
-      }
+    .progress-setings p {
+      font-size: 18px;
+    }
 }
 
 @keyframes rotate {
