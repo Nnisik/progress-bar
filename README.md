@@ -1,4 +1,5 @@
 # Progress Bar
+Prototype of a progress bar, adaptive to mobile devices. 
 
 ## Used
 * JavaScript
