@@ -71,6 +71,11 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   gap: 3vh;
 }
+.progress-setings p {
+  font-size: 28px;
+  font-weight: bold;
+  width: 100px;
+}
 
 .progress-setings > div {
   display: flex;
@@ -79,26 +84,19 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
-.progress-setings p {
-  font-size: 28px;
-  font-weight: bold;
-  width: 100px;
-}
-
 #value {
   font-size: 20px;
   font-weight: bold;
-  border: 3px solid black;
+  border: 3px solid rgb(10, 10, 10);
   border-radius: 30px;
   margin-right: 20px;
   padding: 8px 15px;
   width: 30px;
   text-align: center;
 }
-
 #value::placeholder {
   font-size: 18px;
-  color: black;
+  color: rgb(10, 10, 10);
 }
 
 #value-label {
@@ -137,7 +135,7 @@ input[type=checkbox]:checked + .toggle-switch::before {
   transform: translateX(18px);
 }
 
-@media (max-width: 431px) {
+@media (max-width: 445px) {
   body {
     flex-direction: column;
   }
